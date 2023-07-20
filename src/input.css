@@ -1,0 +1,232 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+body {
+  display: grid;
+  grid-template-columns: auto 4fr;
+  margin: 0;
+  padding: 0;
+}
+#sidebar {
+  padding: 1.2rem;
+  background-color: black;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-items: center;
+}
+
+.logo img {
+  width: 3rem;
+  height: 3rem;
+}
+.logo span {
+  justify-self: start;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+
+.sidemenu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+
+.settings ul li,
+.sidemenu ul li {
+  position: relative;
+}
+
+.settings ul li:hover span,
+.sidemenu ul li:hover span {
+  opacity: 1;
+}
+
+.settings span,
+.sidemenu span {
+  background: black;
+  color: white;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 0.4rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+.sidemenu svg {
+  fill: white;
+  width: 3rem;
+  height: 3rem;
+}
+
+.settings ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.settings svg {
+  width: 3rem;
+  fill: white;
+  height: 3rem;
+}
+
+#main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  max-height: 100%;
+  width: 100%;
+}
+
+.main-body {
+  display: grid;
+  padding: 3rem;
+  grid-auto-rows: min-content;
+  gap: 1rem;
+  align-items: start;
+}
+
+.heading {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.text {
+  letter-spacing: 0.14rem;
+}
+.text h1 {
+  text-transform: capitalize;
+  padding: 1rem 0 0 0;
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 200;
+}
+
+.search {
+  place-self: center;
+}
+
+.search input {
+  background-image: url("img/search.svg");
+  background-size: 1.4rem;
+  background-position: 8px center;
+  background-repeat: no-repeat;
+  padding-left: 3rem;
+  padding-bottom: 0.2rem;
+  font-size: 1.2rem;
+  border: none;
+  border-bottom: 0.1rem solid;
+  outline: none;
+}
+
+#projects {
+  display: grid;
+  grid-auto-rows: min-content;
+  gap: 1rem;
+}
+
+#projects .text {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.group-card {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.card:hover .card-details {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.card-details {
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 2fr 2fr;
+  transition: opacity 0.3s ease;
+  width: 100%;
+}
+
+.card-details .title {
+  padding-left: 1rem;
+  font-size: 2rem;
+}
+
+.card-details .info {
+  padding-left: 1rem;
+  font-size: 1rem;
+}
+
+.card-details .links {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
+}
+
+.links a {
+  border-radius: 1rem;
+  color: white;
+  text-decoration: none;
+  background: red;
+  padding: 1rem 2rem;
+  transition: background 0.3s ease-in-out;
+}
+link a:visited {
+  color: white;
+}
+
+.links a:hover {
+  background: gray;
+  transition: background 0.3s ease-in-out;
+}
+
+.card {
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  background: rgb(236, 236, 236);
+  grid-column: span 1 / span 1;
+  border-radius: 1.2rem;
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+    drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+}
+
+.card img {
+  border-radius: 1.2rem;
+  place-self: center;
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+}
+
+.others {
+}
+
+.side-body {
+  background: red;
+}
