@@ -3,162 +3,151 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/input.css" type="text/css" />
-    <title>Admin Dashboard</title>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="src/input.css" />
   </head>
   <body>
-    <div id="sidebar">
-      <div class="logo">
-        <img src="src/img/logo.png" alt="dashboard" />
-      </div>
-      <div class="sidemenu">
-        <ul>
-          <li>
-            <a href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                <path
-                  d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm-60 60v-480l320-240 320 240v480H530v-250H430v250H160Zm320-353Z"
-                />
-              </svg>
-            </a>
-            <span>Home</span>
-          </li>
-          <li>
-            <a href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                <path
-                  d="M222-255q63-44 125-67.5T480-346q71 0 133.5 23.5T739-255q44-54 62.5-109T820-480q0-145-97.5-242.5T480-820q-145 0-242.5 97.5T140-480q0 61 19 116t63 109Zm257.814-195Q422-450 382.5-489.686q-39.5-39.686-39.5-97.5t39.686-97.314q39.686-39.5 97.5-39.5t97.314 39.686q39.5 39.686 39.5 97.5T577.314-489.5q-39.686 39.5-97.5 39.5Zm.654 370Q398-80 325-111.5q-73-31.5-127.5-86t-86-127.266Q80-397.532 80-480.266T111.5-635.5q31.5-72.5 86-127t127.266-86q72.766-31.5 155.5-31.5T635.5-848.5q72.5 31.5 127 86t86 127.032q31.5 72.532 31.5 155T848.5-325q-31.5 73-86 127.5t-127.032 86q-72.532 31.5-155 31.5ZM480-140q55 0 107.5-16T691-212q-51-36-104-55t-107-19q-54 0-107 19t-104 55q51 40 103.5 56T480-140Zm0-370q34 0 55.5-21.5T557-587q0-34-21.5-55.5T480-664q-34 0-55.5 21.5T403-587q0 34 21.5 55.5T480-510Zm0-77Zm0 374Z"
-                />
-              </svg>
-            </a>
-            <span>Profile</span>
-          </li>
-          <li>
-            <a href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                <path
-                  d="M240-399h313v-60H240v60Zm0-130h480v-60H240v60Zm0-130h480v-60H240v60ZM80-80v-740q0-24 18-42t42-18h680q24 0 42 18t18 42v520q0 24-18 42t-42 18H240L80-80Zm134-220h606v-520H140v600l74-80Zm-74 0v-520 520Z"
-                />
-              </svg>
-            </a>
-            <span>Chats</span>
-          </li>
-          <li>
-            <a href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                <path
-                  d="M477-120q-149 0-253-105.5T120-481h60q0 125 86 213t211 88q127 0 215-89t88-216q0-124-89-209.5T477-780q-68 0-127.5 31T246-667h105v60H142v-208h60v106q52-61 123.5-96T477-840q75 0 141 28t115.5 76.5Q783-687 811.5-622T840-482q0 75-28.5 141t-78 115Q684-177 618-148.5T477-120Zm128-197L451-469v-214h60v189l137 134-43 43Z"
-                />
-              </svg>
-            </a>
-            <span>History</span>
-          </li>
-          <li>
-            <a href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                <path
-                  d="M480-80q-85 0-158-30.5T195-195q-54-54-84.5-127T80-480q0-84 30.5-157T195-764q54-54 127-85t158-31q75 0 140 24t117 66l-43 43q-44-35-98-54t-116-19q-145 0-242.5 97.5T140-480q0 145 97.5 242.5T480-140q145 0 242.5-97.5T820-480q0-30-4.5-58.5T802-594l46-46q16 37 24 77t8 83q0 85-31 158t-85 127q-54 54-127 84.5T480-80Zm-59-218L256-464l45-45 120 120 414-414 46 45-460 460Z"
-                />
-              </svg>
-            </a>
-            <span>Tasks</span>
-          </li>
-          <li>
-            <a href="#"
-              ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                <path
-                  d="M0-240v-53q0-38.567 41.5-62.784Q83-380 150.376-380q12.165 0 23.395.5Q185-379 196-377.348q-8 17.348-12 35.165T180-305v65H0Zm240 0v-65q0-32 17.5-58.5T307-410q32-20 76.5-30t96.5-10q53 0 97.5 10t76.5 30q32 20 49 46.5t17 58.5v65H240Zm540 0v-65q0-19.861-3.5-37.431Q773-360 765-377.273q11-1.727 22.171-2.227 11.172-.5 22.829-.5 67.5 0 108.75 23.768T960-293v53H780Zm-480-60h360v-6q0-37-50.5-60.5T480-390q-79 0-129.5 23.5T300-305v5ZM149.567-410Q121-410 100.5-430.562 80-451.125 80-480q0-29 20.562-49.5Q121.125-550 150-550q29 0 49.5 20.5t20.5 49.933Q220-451 199.5-430.5T149.567-410Zm660 0Q781-410 760.5-430.562 740-451.125 740-480q0-29 20.562-49.5Q781.125-550 810-550q29 0 49.5 20.5t20.5 49.933Q880-451 859.5-430.5T809.567-410ZM480-480q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T600-600q0 50-34.5 85T480-480Zm.351-60Q506-540 523-557.351t17-43Q540-626 522.851-643t-42.5-17Q455-660 437.5-642.851t-17.5 42.5Q420-575 437.351-557.5t43 17.5ZM480-300Zm0-300Z"
-                />
-              </svg>
-            </a>
-            <span>Group</span>
-          </li>
-        </ul>
-      </div>
-      <div class="settings">
-        <ul>
-          <li>
-            <a href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                <path
-                  d="m388-80-20-126q-19-7-40-19t-37-25l-118 54-93-164 108-79q-2-9-2.5-20.5T185-480q0-9 .5-20.5T188-521L80-600l93-164 118 54q16-13 37-25t40-18l20-127h184l20 126q19 7 40.5 18.5T669-710l118-54 93 164-108 77q2 10 2.5 21.5t.5 21.5q0 10-.5 21t-2.5 21l108 78-93 164-118-54q-16 13-36.5 25.5T592-206L572-80H388Zm92-270q54 0 92-38t38-92q0-54-38-92t-92-38q-54 0-92 38t-38 92q0 54 38 92t92 38Zm0-60q-29 0-49.5-20.5T410-480q0-29 20.5-49.5T480-550q29 0 49.5 20.5T550-480q0 29-20.5 49.5T480-410Zm0-70Zm-44 340h88l14-112q33-8 62.5-25t53.5-41l106 46 40-72-94-69q4-17 6.5-33.5T715-480q0-17-2-33.5t-7-33.5l94-69-40-72-106 46q-23-26-52-43.5T538-708l-14-112h-88l-14 112q-34 7-63.5 24T306-642l-106-46-40 72 94 69q-4 17-6.5 33.5T245-480q0 17 2.5 33.5T254-413l-94 69 40 72 106-46q24 24 53.5 41t62.5 25l14 112Z"
-                />
-              </svg>
-            </a>
-            <span>Settings</span>
-          </li>
-          <li>
-            <a href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                <path
-                  d="M440-120v-60h340v-304q0-58-25-111.5T688-690q-42-41-96-65.5T480-780q-58 0-112 24.5T272-690q-42 41-67 94.5T180-484v244h-20q-33 0-56.5-23.5T80-320v-80q0-23 11-40.5t29-28.5l3-53q9-73 41.5-132t81-100q48.5-41 109-63.5T480-840q66 0 126.5 22.5t108.5 64q48 41.5 80.5 100T837-523l3 52q18 9 29 26.5t11 38.5v92q0 22-11 39t-29 26v69q0 24.75-17.625 42.375T780-120H440Zm-80-290q-12 0-21-9t-9-21.5q0-12.5 9-21t21.5-8.5q12.5 0 21 8.625T390-440q0 12-8.625 21T360-410Zm240 0q-12 0-21-9t-9-21.5q0-12.5 9-21t21.5-8.5q12.5 0 21 8.625T630-440q0 12-8.625 21T600-410Zm-359-52q-4-59 16.5-107t55-81.5Q347-684 392-702t90-18q91 0 153 57.5T711-519q-94-1-165.5-50.5T435-698q-16 81-67.5 143.5T241-462Z"
-                />
-              </svg>
-            </a>
-            <span>Support</span>
-          </li>
-          <li>
-            <a href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                <path
-                  d="m436-347 228-228-42-41-183 183-101-101-44 44 142 143Zm44 266q-140-35-230-162.5T160-523v-238l320-120 320 120v238q0 152-90 279.5T480-81Zm0-62q115-38 187.5-143.5T740-523v-196l-260-98-260 98v196q0 131 72.5 236.5T480-143Zm0-337Z"
-                />
-              </svg>
-            </a>
-            <span>Privacy</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div id="main">
-      <div class="main-body">
-        <div class="heading">
-          <div class="text">
-            <h1>Oversee the well-being of your business.</h1>
-            <p>
-              Streamline data management and analysis for effortless control.
-            </p>
-          </div>
-          <div class="search"><input type="text" placeholder="Search" /></div>
+    <main>
+      <div id="sidebar">
+        <div class="logo">Dash</div>
+        <div class="sidemenu">
+          <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Groups</a></li>
+          </ul>
         </div>
-        <div id="projects">
+        <div class="settings">
+          <ul>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="global">
+        <div class="search">
+          <input type="text" placeholder="Search..." />
+        </div>
+        <div class="calendar">
+          <div class="text">Calendar</div>
+          <div class="week">
+            <ul>
+              <li class="today"><span>Mon</span> 21</li>
+              <li><span>Tue</span> 22</li>
+              <li><span>Wed</span> 23</li>
+              <li class="upcoming"><span>Thu</span> 24</li>
+              <li class="upcoming"><span>Fri</span> 25</li>
+              <li><span>Sat</span> 26</li>
+              <li><span>Sun</span> 27</li>
+            </ul>
+          </div>
+        </div>
+        <div class="projects">
           <div class="text">Projects</div>
-          <div class="group-card">
-            <div class="card">
-              <img src="src/img/calculator.png" />
-              <div class="card-details">
-                <p class="title">Calculator</p>
-                <p class="info">HTML, CSS, JS</p>
-                <div class="links">
-                  <a href="">View Code</a><a href="">Live Preview</a>
-                </div>
+          <div class="card">
+            <img src="src/img/calculator.png" />
+            <div class="info">
+              <div class="title">Calculator</div>
+              <div class="btns">
+                <a href="">Github</a>
+                <a href="">Preview</a>
               </div>
             </div>
-            <div class="card">
-              <img src="src/img/sketchmaster.png" />
-              <div class="card-details">
-                <p class="title">Clash of Cattitude</p>
-                <p class="info">HTML, CSS, JS</p>
-                <div class="links">
-                  <a href="">View Code</a><a href="">Live Preview</a>
-                </div>
+          </div>
+          <div class="card">
+            <img src="src/img/sign.png" />
+            <div class="info">
+              <div class="title">Sign-Up Form</div>
+              <div class="btns">
+                <a href="">Github</a>
+                <a href="">Preview</a>
               </div>
             </div>
-            <div class="card">
-              <img src="src/img/sign.png" />
-              <div class="card-details">
-                <p class="title">Sign Up Form</p>
-                <p class="info">HTML, CSS, JS</p>
-                <div class="links">
-                  <a href="">View Code</a><a href="">Live Preview</a>
-                </div>
+          </div>
+          <div class="card">
+            <img src="src/img/ClashofCattitude.png" />
+            <div class="info">
+              <div class="title">Clash of Cattitude</div>
+              <div class="btns">
+                <a href="">Github</a>
+                <a href="">Preview</a>
               </div>
             </div>
           </div>
         </div>
-        <div id="others">malip</div>
       </div>
-      <div class="side-body">hello</div>
-    </div>
+      <div id="events">
+        <div class="user">
+          <div class="">EN</div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+            <path
+              d="M180.001-204.616v-45.383h72.308v-315.924q0-81.308 49.307-144.923 49.308-63.615 128.385-78.692v-20.461q0-20.833 14.57-35.416 14.57-14.584 35.384-14.584t35.429 14.584q14.615 14.583 14.615 35.416v20.461q79.077 15.077 128.385 78.692 49.307 63.615 49.307 144.923v315.924h72.308v45.383H180.001ZM479.932-92.309q-29.855 0-51.047-21.24-21.192-21.24-21.192-51.067h144.614q0 29.923-21.26 51.115-21.26 21.192-51.115 21.192Z"
+            />
+          </svg>
+          <img src="src/img/user.jpg" alt="user" class="user-logo" />
+        </div>
+        <div class="upcoming-events">
+          <div class="text">Upcoming Events</div>
+          <div class="event-card">
+            <div class="event">
+              <span class="event-title"
+                >Finishing Dashboard -
+                <b>Thursday 24</b>
+              </span>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Excepturi enim repellat, sequi et distin
+                <button>read more</button>
+              </p>
+            </div>
+            <div class="event">
+              <span class="event-title"
+                >Becoming Full Stack Developer - <b>Friday 25</b></span
+              >
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Excepturi enim repellat, sequi et distin
+                <button>read more</button>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="trending">
+          <div class="text">Trending</div>
+          <div class="trends-container">
+            <div class="trend">
+              <img src="src/img/user.jpg" alt="user" class="user-logo" />
+              <div class="trend-text">
+                <span>@user</span>
+                <p>information Maker</p>
+              </div>
+            </div>
+            <div class="trend">
+              <img src="src/img/user.jpg" alt="user" class="user-logo" />
+              <div class="trend-text">
+                <span>@user</span>
+                <p>information Dev</p>
+              </div>
+            </div>
+            <div class="trend">
+              <img src="src/img/user.jpg" alt="user" class="user-logo" />
+              <div class="trend-text">
+                <span>@user</span>
+                <p>information App</p>
+              </div>
+            </div>
+            <div class="trend">
+              <img src="src/img/user.jpg" alt="user" class="user-logo" />
+              <div class="trend-text">
+                <span>@user</span>
+                <p>information Builder</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
