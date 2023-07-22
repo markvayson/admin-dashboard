@@ -5,37 +5,100 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 body {
-  background: rgb(78, 2, 2);
+  background-color: #f1f5f9;
   display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: min-content 1fr;
+  gap: 2rem;
+  position: relative;
+}
+
+#loader {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: grid;
+  grid-template-columns: min-content min-content;
+  gap: 1rem;
+  justify-content: center;
+  transition: opacity 1s ease;
   place-items: center;
+  background-color: #f1f5f9;
+  z-index: 101;
+}
+#loader svg {
+  width: 3rem;
+  height: 3rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 main {
-  background: linear-gradient(
-    144deg,
-    rgba(237, 11, 11, 1) 0%,
-    rgba(220, 54, 12, 0.89) 100%
-  );
-  -webkit-box-shadow: 0px 0px 50px 30px #ff0000;
-  -moz-box-shadow: 0px 0px 50px 30px #ff0000;
-  box-shadow: 0px 0px 50px 30px #ff0000;
-
-  width: 99%;
-  height: 99%;
   display: grid;
-  grid-template-columns: 1fr 4fr 2fr;
-  border-radius: 2rem;
+  gap: 2rem;
+  grid-row: 2/2;
+  grid-template-columns: 2fr 1fr;
+}
+
+header {
+  padding-top: 1rem;
+  display: grid;
+  grid-column: 2/ 2;
+  grid-template-columns: 1fr min-content min-content;
+  width: 100%;
+  gap: 2rem;
+}
+.header-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.event button,
+.header-items button {
+  width: 6rem;
+  text-align: center;
+  align-items: center;
+  border-radius: 1rem;
+  border: none;
+  padding: 1rem;
+  background: #f8fafc;
+  cursor: pointer;
+  letter-spacing: 0.12rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.event button:hover,
+.header-items button:hover {
+  background-color: #0ea5e9;
+  color: white;
+}
+
+.event button {
+  background-color: #f1f5f9;
 }
 
 #sidebar {
-  padding-left: 2rem;
+  background-color: #f8fafc;
   display: grid;
   height: 100%;
   margin: 0;
+  padding-left: 1rem;
+  grid-row: 1/-1;
+  place-content: center;
 
   grid-template-rows: 1fr 2fr 1fr;
   gap: 2rem;
@@ -43,7 +106,6 @@ main {
 
 .logo {
   font-size: 3rem;
-  padding-top: 1rem;
   letter-spacing: 1rem;
 }
 
@@ -56,9 +118,29 @@ main {
 
 #sidebar a {
   text-decoration: none;
-  color: white;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+
+  place-items: center;
+  justify-items: start;
+  color: black;
+  gap: 1rem;
 }
 
+#sidebar a svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.sidemenu ul li {
+  padding: 0;
+  transition: margin 0.3s ease-in-out;
+}
+
+.active {
+  background-color: #f1f5f9;
+  margin-left: 2rem !important;
+}
 .settings ul,
 .sidemenu ul {
   display: grid;
@@ -73,52 +155,75 @@ main {
   place-items: center;
 }
 
-.search {
-  padding-top: 1rem;
-  width: 100%;
+.search-container {
   display: grid;
+  align-content: center;
   place-items: end;
+}
+
+.search {
+  width: 35%;
+  position: relative;
+  display: grid;
+
+  place-items: end;
+}
+
+.search svg:hover {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.search svg {
+  transition: width 0.2s ease;
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  top: 50%;
+  right: 2%;
+  transform: translateY(-50%);
+  z-index: 100;
 }
 
 .search input::placeholder {
   color: #b1b0b0;
 }
 .search input {
-  background-color: rgb(255, 31, 31);
-  color: white;
+  width: 0%;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
   padding: 1rem;
-  width: 34%;
   border: none;
   border-radius: 2rem;
-  background-image: url("img/search.svg");
   font-size: 1.2rem;
 
   background-size: 2rem;
   background-position: 8px center;
   background-repeat: no-repeat;
 
-  padding-left: 3rem;
   outline: none;
 }
 
 .calendar {
-  padding-left: 2rem;
   display: grid;
+  background-color: #f8fafc;
+  grid-column: span 1 / span 1;
   grid-template-rows: min-content;
-  gap: 2rem;
-  width: 100%;
+  gap: 1rem;
+  border-radius: 1rem;
 }
 
-.week ul {
+#week ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  padding-bottom: 1rem;
   gap: 2rem;
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 
-.week li {
+#week li {
   display: grid;
   grid-template-rows: 1fr 1fr;
   place-self: center;
@@ -126,7 +231,7 @@ main {
   gap: 1rem;
 }
 
-.week span {
+#week span {
   font-size: 1.2rem;
   font-weight: bold;
 }
@@ -138,29 +243,34 @@ main {
     rgba(238, 130, 238, 1) 100%
   );
 
-  color: black;
   padding: 0.6rem;
   border-radius: 1.6rem;
 }
 
 .upcoming {
+  padding: 0.6rem;
+  color: white;
   background: linear-gradient(
     124deg,
     rgba(0, 135, 255, 1) 0%,
     rgba(0, 56, 255, 1) 100%
   );
 
-  padding: 0.6rem;
   border-radius: 1.6rem;
 }
 
-.projects {
-  color: white;
-  width: 100%;
-  height: 100%;
+.main-contents {
   display: grid;
+  grid-template-rows: min-content 1fr;
   gap: 2rem;
-  padding-left: 2rem;
+}
+
+.projects {
+  display: grid;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  background-color: #f8fafc;
+  gap: 2rem;
   grid-template-rows: min-content;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -169,9 +279,10 @@ main {
   font-size: 1.6rem;
   grid-column: 1 / -1;
   grid-row: 1;
-  color: white;
   font-weight: bold;
   letter-spacing: 0.2rem;
+  padding-left: 1rem;
+  padding-top: 1rem;
 }
 
 .card {
@@ -201,7 +312,15 @@ main {
   gap: 2rem;
   place-items: center;
 }
+.info a svg {
+  width: 2rem;
+  height: 2rem;
+  transition: fill 0.2s ease;
+}
 
+.info a:hover svg {
+  fill: #d946ef;
+}
 .title {
   font-size: 1.2rem;
 }
@@ -214,33 +333,36 @@ main {
 }
 
 .btns a {
-  color: white;
   text-decoration: none;
 }
 
 #events {
-  padding-right: 2rem;
-  padding-left: 2rem;
-  height: 100%;
   display: grid;
   gap: 2rem;
-  grid-template-rows: repeat(3, min-content);
+  grid-template-rows: repeat(2, 1fr);
 }
 
 .user {
-  padding-top: 1rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
   display: grid;
-  grid-template-columns: repeat(3, min-content);
+  grid-template-columns: repeat(4, min-content);
   gap: 1rem;
   place-self: end;
   text-align: center;
   align-items: center;
 }
 
+.user p {
+  white-space: nowrap;
+  letter-spacing: 0.12rem;
+  background-color: #f8fafc;
+  padding: 1rem;
+  text-transform: capitalize;
+}
 .user svg {
   width: 2rem;
   height: 2rem;
-  fill: white;
 }
 
 .user-logo {
@@ -251,19 +373,21 @@ main {
 }
 
 .upcoming-events {
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
   display: grid;
+  background-color: #f8fafc;
   gap: 1rem;
   grid-template-rows: min-content 1fr;
 }
 
 .event-card {
   display: grid;
-  grid-template-rows: repeat(3, min-content);
+  grid-template-rows: repeat(auto, min-content);
   gap: 1rem;
   place-items: center;
   align-items: center;
   border-radius: 1rem;
-  color: white;
 }
 
 .event {
@@ -271,20 +395,18 @@ main {
   display: grid;
   place-items: start;
   text-align: justify;
-  border-bottom: 1px solid #b1b0b0;
 }
-
 .event:last-of-type {
   border: none;
 }
 
 .event span {
-  padding-top: 1rem;
+  font-size: 1.1rem;
   font-weight: bold;
 }
 
 .event p {
-  line-height: 1.2rem;
+  line-height: 1.6rem;
 }
 .event-title b {
   background: linear-gradient(
@@ -292,12 +414,14 @@ main {
     rgba(0, 135, 255, 1) 0%,
     rgba(0, 56, 255, 1) 100%
   );
-
   padding: 0.4rem;
+  color: white;
   border-radius: 1rem;
 }
 
 .trending {
+  border-top-left-radius: 1rem;
+  background-color: #f8fafc;
   width: 100%;
   display: grid;
   grid-template-rows: min-content 1fr;
@@ -308,12 +432,9 @@ main {
   width: 100%;
   border-radius: 1rem;
   display: grid;
-  color: white;
 }
 
 .trend {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   width: 80%;
   place-self: center;
   display: grid;
