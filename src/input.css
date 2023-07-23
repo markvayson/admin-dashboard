@@ -14,7 +14,7 @@ body {
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-template-rows: min-content 1fr;
-  gap: 2rem;
+  gap: 1rem;
   position: relative;
 }
 
@@ -60,6 +60,11 @@ header {
   grid-template-columns: 1fr min-content min-content;
   width: 100%;
   gap: 2rem;
+}
+
+#menu {
+  opacity: 0;
+  display: none;
 }
 .header-items {
   display: grid;
@@ -134,12 +139,11 @@ header {
 
 .sidemenu ul li {
   padding: 0;
-  transition: margin 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .active {
   background-color: #f1f5f9;
-  margin-left: 2rem !important;
 }
 .settings ul,
 .sidemenu ul {
@@ -265,14 +269,13 @@ header {
   gap: 2rem;
 }
 
-.projects {
+#projects {
   display: grid;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   background-color: #f8fafc;
-  gap: 2rem;
-  grid-template-rows: min-content;
-  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  grid-template-rows: min-content 1fr;
 }
 
 .text {
@@ -285,7 +288,17 @@ header {
   padding-top: 1rem;
 }
 
+#card-container {
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  overflow-x: auto;
+  gap: 1rem;
+  width: 100%;
+  position: relative;
+}
+
 .card {
+  white-space: nowrap;
   grid-row: 2;
   display: grid;
   grid-template-rows: min-content min-content;
@@ -301,9 +314,6 @@ header {
   width: 14rem;
   height: 24rem;
   object-fit: cover;
-  -webkit-box-shadow: 4px 2px 20px 5px #4a1c1c;
-  -moz-box-shadow: 4px 2px 20px 5px #4a1c1c;
-  box-shadow: 4px 2px 20px 5px #4a1c1c;
 }
 
 .info {
@@ -450,4 +460,161 @@ header {
 .trend-text span {
   font-weight: bold;
   font-size: 1.2rem;
+}
+
+@media (max-width: 1023px) {
+  #sidebar {
+    position: absolute;
+    display: none;
+    width: 100%;
+    opacity: 0;
+    z-index: 130;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content 1fr;
+    gap: 1rem;
+    padding: 0;
+    align-items: start;
+    justify-items: center;
+    overflow-y: hidden;
+    transition: opacity 0.2s ease;
+  }
+  .logo {
+    width: 100%;
+    text-align: right;
+  }
+  .settings ul,
+  .sidemenu ul {
+    gap: 0.5rem;
+  }
+
+  #menu {
+    opacity: 1;
+    display: block;
+  }
+
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content auto;
+  }
+
+  header {
+    grid-row: 1/1;
+    grid-column: 1/-1;
+    gap: 0.5rem;
+    grid-column: 1/-1;
+    padding-top: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, min-content);
+  }
+
+  .header-items {
+    place-items: center;
+  }
+  .search-container {
+    order: 2;
+    width: 100%;
+    place-items: center;
+  }
+
+  .search {
+    width: 90%;
+    place-items: center;
+  }
+  #search-input {
+    opacity: 1;
+    width: 100%;
+  }
+  #svgSearch {
+    pointer-events: none;
+  }
+
+  .user {
+    order: 1;
+    padding: 0;
+    place-self: center;
+    grid-template-columns: repeat(5, min-content);
+  }
+  .header-items {
+    order: 3;
+  }
+
+  .en {
+    order: 3;
+  }
+
+  .user-logo {
+    order: 1;
+  }
+  .user p {
+    order: 2;
+  }
+  #menu {
+    order: 5;
+  }
+  .user svg {
+    order: 4;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+  }
+  .main-contents {
+    gap: 1rem;
+  }
+
+  .calendar {
+    gap: 0.5rem;
+  }
+
+  #cal {
+    padding-top: 0.5rem;
+  }
+  .text {
+    font-size: 1.3rem;
+  }
+  #week {
+    padding: 0.5rem;
+  }
+
+  #week ul {
+    gap: 1rem;
+  }
+
+  #week span {
+    font-size: 1rem;
+  }
+
+  #projects {
+    gap: 0.5rem;
+  }
+
+  #card-container {
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .card {
+    gap: 1rem;
+  }
+
+  .card img {
+    height: 18rem;
+  }
+
+  .info {
+    gap: 1rem;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .btns {
+    gap: 1rem;
+  }
+
+  .btns a svg {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
 }
